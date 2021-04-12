@@ -1,0 +1,17 @@
+apiVersion: "serving.kubeflow.org/v1beta1"
+kind: "InferenceService"
+metadata:
+  name: "objdetect-sample"
+spec:
+  predictor:
+    tensorflow:
+      resources:
+        limits:
+          cpu: "0.5"
+          memory: 2Gi
+        requests:
+          cpu: "0.5"
+          memory: 2Gi
+
+      storageUri: uri://github.com/sjnyos/models/raw/main/models.tar.gz
+
